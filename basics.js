@@ -202,7 +202,47 @@ orderFood(20.00, 'Kengeles', 'Nyama choma')
 
 // 7. Loops
 // - Iterating over arrays
-// - Iterating over objects
+// Using the forEach method
+// carModels = ['Ferrari','Zonda','Land rover','Passat','Toyota','Mercedes']; 
+carModels.forEach(function(carModel, index){
+	carModels[index] = {name: carModel};
+});
+
+console.log('Car Models after running forEach', carModels);
+
+// Using the regular for loop
+carModels = ['Ferrari','Zonda','Land rover','Passat','Toyota','Mercedes']; 
+
+for(i = 0; i < carModels.length; i++){
+	carModels[i] = {name: carModels[i]};
+}
+
+console.log('Car Models after running for loop', carModels);
+
+// Using the map
+// The map returns a new array after executing the callback on each
+// element in an array
+carModels = ['Ferrari','Zonda','Land rover','Passat','Toyota','Mercedes']; 
+
+carModelObjects = carModels.map(function(carModel, index){
+										return {name: carModel, year: 2009 + index};
+									});
+
+console.log('Car Models after running map', carModelObjects);
+
+// - Iterating over an object
+
+pet = {
+	name: "Whiskers",
+	owner: "Muthuri",
+	age: 2,
+	gender: "Male"
+}
+
+for(key in pet){
+	console.log("Object key: ",key, "Object value: ", pet[key]);
+}
+
 
 // Looking for help
 // - Using built in functions before writing your own.
